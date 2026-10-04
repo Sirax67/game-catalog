@@ -13,12 +13,12 @@ export default function Card ({game}: {game: Game}) {
             </div>
 
             <div className="flex flex-col gap-4">
-                <div className="w-full flex justify-between">
+                <div className="w-full flex flex-col gap-4 sm:flex-row justify-between">
                     <h2 className="text-xl font-bold">
                         {game.title}
                     </h2>
 
-                    <span className={`rounded-full border border-white/10 px-4 py-1 text-sm font-medium ${categoryColors[game.category]}`}>
+                    <span className={`w-fit rounded-full border border-white/10 px-4 py-1 text-sm font-medium ${categoryColors[game.category]}`}>
                         {game.category}
                     </span>
                 </div>
