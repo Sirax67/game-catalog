@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Unbounded, Manrope } from "next/font/google";
+import Header from "@/components/ui/Header";
+import Footer from "@/components/ui/Footer";
 import "./globals.css";
 
 const unbounded = Unbounded({
@@ -25,10 +27,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ru"
       className={`${unbounded.variable} ${manrope.variable} antialiased`}
     >
-      <body className="relative overflow-x-hidden min-h-svh flex flex-col bg-[radial-gradient(ellipse_900px_700px_at_85%_60%,var(--horizon)_0%,var(--deep)_50%,var(--base)_100%)]">
-        <main className="mx-auto flex w-full max-w-[1184px] flex-1 flex-col px-4 sm:px-6">
-          {children}
-        </main>
+      <body className="relative flex min-h-svh flex-col overflow-x-hidden bg-[radial-gradient(ellipse_90%_70%_at_86%_64%,var(--horizon)_0%,var(--deep)_50%,var(--base)_100%)]">
+        <div className="mx-auto flex w-full max-w-[1184px] flex-1 flex-col px-4 sm:px-6">
+          <Header />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
